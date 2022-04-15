@@ -1,1 +1,1 @@
-# computer-design-exercise-1
+# bits-to-bcd
