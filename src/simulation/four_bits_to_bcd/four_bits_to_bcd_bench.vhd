@@ -39,22 +39,19 @@ architecture Behavioral of four_bits_to_bcd_bench is
     component four_bits_to_bcd
        Port ( input : in unsigned(3 downto 0);
               btn_in: in std_logic;
-              led_out: out unsigned(3 downto 0);
-              bcd_o : out unsigned(7 downto 0)
+              led_o: out unsigned(3 downto 0)
             );
     end component;
     
     signal input_s : unsigned(3 downto 0);
-    signal bcd_o_s : unsigned(7 downto 0);
     signal btn_in_s : std_logic;
-    signal led_out_s: unsigned(3 downto 0);
+    signal led_o_s: unsigned(3 downto 0);
 
     begin
         uut: four_bits_to_bcd port map(
             input => input_s,
-            bcd_o => bcd_o_s,
             btn_in => btn_in_s,
-            led_out => led_out_s
+            led_o => led_o_s
         );
     start_proc: process
     begin

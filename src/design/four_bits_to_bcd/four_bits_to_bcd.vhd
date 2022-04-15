@@ -34,8 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity four_bits_to_bcd is
     Port ( input : in unsigned(3 downto 0);
            btn_in: in std_logic;
-           led_out: out unsigned(3 downto 0);
-           bcd_o : out unsigned(7 downto 0)
+           led_o : out unsigned(3 downto 0)
          );
 end four_bits_to_bcd;
 
@@ -48,23 +47,8 @@ architecture Behavioral of four_bits_to_bcd is
         check_above_nine <= (input(3)) and (input(1) or input(2));
         bcd_res <= ("0000" & input) when check_above_nine = '0'
                  else ( "000" & ( ('0' & input) + "0110"));
-        bcd_o <= bcd_res;
-        led_out <= bcd_res(3 downto 0) when btn_in = '0'
+       
+        led_o <= bcd_res(3 downto 0) when btn_in = '0'
                  else bcd_res(7 downto 4); 
               
 end Behavioral;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
