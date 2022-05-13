@@ -40,7 +40,7 @@ end six_bits_to_bcd;
 
 architecture Behavioral of six_bits_to_bcd is
 
-    signal input_tmp: unsigned(13 downto 00) := "00000000000000";
+    signal input_tmp: unsigned(13 downto 0) := "00000000000000";
     
     signal ones_1: unsigned(3 downto 0);
     signal ones_2: unsigned(3 downto 0);                                     
